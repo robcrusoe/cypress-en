@@ -12,7 +12,9 @@ describe("Aliasing using Cypress - Extended", () => {
     /* Another way to work with Aliasing ... */
     cy.get("@charsLeftSpan").then(($charsLeftSpan) => {
       /* `$charsLeftSpan` -> Denotes the DOM Element that Cypress returns to us ... */
-      expect($charsLeftSpan.text()).to.equal("15");
+      // expect($charsLeftSpan.text()).to.equal("15");
+
+      cy.wrap($charsLeftSpan).invoke('text').should('equal', '15');
     });
 
     /* Checks the initial state ... */
