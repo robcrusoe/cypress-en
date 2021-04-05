@@ -34,7 +34,10 @@ describe('Basic Page Interactions', () => {
 
     /* working with trigger-commands */
     it('works with the different trigger commands provided by cypress', () => {
-        cy.get('[data-cy="box-4-items-list"] > :nth-child(2)').trigger('mouseover', 10, 20);
+        cy.get('[data-cy="box-4-items-list"] > :nth-child(2)').trigger('mouseover', 10, 20)
+            .then(() => {
+                debugger;
+            });
 
         cy.get('[data-cy="box-4-selected-name"]')
             .invoke('text')
