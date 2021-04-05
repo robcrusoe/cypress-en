@@ -31,4 +31,13 @@ describe('Basic Page Interactions', () => {
             .invoke('text')
             .should('equal', 'Option Three');
     });
+
+    /* working with trigger-commands */
+    it('works with the different trigger commands provided by cypress', () => {
+        cy.get('[data-cy="box-4-items-list"] > :nth-child(2)').trigger('mouseover', 10, 20);
+
+        cy.get('[data-cy="box-4-selected-name"]')
+            .invoke('text')
+            .should('equal', 'Option Two')
+    });
 });
