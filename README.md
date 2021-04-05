@@ -1,2 +1,2 @@
 # Cypress | En
-A simple playground for playing around with cypress
+A simple playground for playing around with Cypress
